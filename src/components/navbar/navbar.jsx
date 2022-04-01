@@ -8,14 +8,29 @@ const Navbar = () => {
 <div className="navbar__logo">
     <div className="navbar__media">
         <img src={logo} alt="" />
-    </div>
-    <span>Finema</span>
+    </div >
+    <span className="navbar__logoname">Finema</span>
 </div>
 <div className="navbar__genre">
-    <span className="navbar__text">Likes</span>
-    <span className="navbar__text">History</span>
-    <span className="navbar__text">Playlist</span>
-    <span className="navbar__text">Watch Later</span>
+
+<div className="navbar__badge">
+<span className="navbar__text">Likes</span>
+<span className="navbar__badge_number navbar__text">2</span>
+</div>
+
+<span className="navbar__text">History</span>
+
+
+<div className="navbar__badge">
+<span className="navbar__text">Playlist</span>
+<span className="navbar__badge_number navbar__text">2</span>
+</div>
+
+<div className="navbar__badge">
+<span className="navbar__text">Watch later</span>
+<span className="navbar__badge_number navbar__text">2</span>
+</div>
+
 </div>
 <div className="navbar__profile">
     <span className="navbar__text">Login</span>

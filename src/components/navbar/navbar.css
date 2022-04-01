@@ -13,7 +13,9 @@ height: 9vh;
 /* align-items: center; */
 }
 .navbar__logo{
-
+  display: flex;
+  gap: 1rem;
+  align-items:center;
 }
 .navbar__media{
     height: 100%;
@@ -24,11 +26,16 @@ height: 9vh;
     width: 100%;
     object-fit: cover;
 }
-
+.navbar__logoname{
+    color: var(--primary-color);
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+}
 .navbar__genre{
 display: flex;
 gap: 2rem;
 margin: auto;
+align-items: center;
 }
 
 .navbar__text {
@@ -37,4 +44,16 @@ margin: auto;
 }
 .navbar__profile{
     margin: auto 0;
+}
+
+.navbar__badge{
+    /* border: 1px solid #ffff; */
+    padding :  1rem 1.5rem;
+    position: relative;
+}
+.navbar__badge_number{
+    position: absolute;
+    top: 0;
+    right :0;
+    color: var(--primary-color)
 }

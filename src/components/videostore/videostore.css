@@ -1,0 +1,33 @@
+.videostore{
+    /* border: 1px solid #ffff */
+}
+.video-card{
+border: none;
+}
+p{
+    color: #ffff
+}
+.border-skin,.text-overlay-card-img-box{
+    width: 40rem;
+}
+.text-overlay-card-img-box img {
+    width: 95%;
+    object-fit: cover;
+}
+
+.videostore_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.card-desc{
+    color: #ffff
+}
+.card-footer-box >a {
+    color: #ffff
+}
+.card__icons{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
