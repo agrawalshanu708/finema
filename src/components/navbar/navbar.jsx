@@ -1,7 +1,10 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import "./navbar.css"
+import {useLike} from "./../../context/index"
 import {logo} from "./../../assets/index"
 const Navbar = () => {
+    const{likeState} = useLike()
   return (
     <>
     <div className="navbar">
@@ -14,8 +17,8 @@ const Navbar = () => {
 <div className="navbar__genre">
 
 <div className="navbar__badge">
-<span className="navbar__text">Likes</span>
-<span className="navbar__badge_number navbar__text">2</span>
+<Link to = "/like"> <span className="navbar__text">Likes</span></Link>
+<span className="navbar__badge_number navbar__text">{likeState.likeItems.length}</span>
 </div>
 
 <span className="navbar__text">History</span>

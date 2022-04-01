@@ -2,10 +2,13 @@ const likeReducer = (likeState,likeAction) => {
     switch (likeAction.type) {
         case "ADD_TO_LIKE":
  return {...likeState, 
-  likedItems : [...likeState.likedItems, likeAction.payload]
+  likeItems : [...likeState.likeItems, likeAction.payload]
 }            
-    
-        default:
+     case "REMOVE_FROM_LIKE":
+    return {...likeState, 
+    likeItems :  likeState.likeItems.filter((item,ind) => ind !== likeAction.payload )     
+
+    }
             return likeState
     }
 }

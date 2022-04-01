@@ -5,7 +5,7 @@ const LikeContext = createContext();
 const LikeProvider = ({children}) => {
   
 const[likeState,likeDispatch] = useReducer(likeReducer,{
-    likedItems :[]
+    likeItems :[]
 })    
     return (
         <LikeContext.Provider value = {{likeState,likeDispatch}}>
