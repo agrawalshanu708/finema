@@ -9,6 +9,7 @@ const likeReducer = (likeState,likeAction) => {
     likeItems :  likeState.likeItems.filter((item,ind) => ind !== likeAction.payload )     
 
     }
+    default:
             return likeState
     }
 }
