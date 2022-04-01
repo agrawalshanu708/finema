@@ -1,19 +1,20 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import "./navbar.css"
-import {useLike} from "./../../context/index"
+import {useLike,useWatchLater} from "./../../context/index"
 import {logo} from "./../../assets/index"
 const Navbar = () => {
     const{likeState} = useLike()
+    const{watchLaterState} = useWatchLater()
   return (
     <>
     <div className="navbar">
-<div className="navbar__logo">
+<Link to = "/"> <div className="navbar__logo">
     <div className="navbar__media">
         <img src={logo} alt="" />
     </div >
     <span className="navbar__logoname">Finema</span>
-</div>
+</div></Link>
 <div className="navbar__genre">
 
 <div className="navbar__badge">
@@ -30,8 +31,8 @@ const Navbar = () => {
 </div>
 
 <div className="navbar__badge">
-<span className="navbar__text">Watch later</span>
-<span className="navbar__badge_number navbar__text">2</span>
+<Link to = "/watchlater"><span className="navbar__text">Watch later</span></Link> 
+<span className="navbar__badge_number navbar__text">{watchLaterState.watchLaterItems.length}</span>
 </div>
 
 </div>

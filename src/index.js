@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { LikeProvider } from "./context/likecontext";
+import { LikeProvider,WatchLaterProvider } from "./context/index";
 
 
 // Call make Server
@@ -14,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <LikeProvider>
+      <WatchLaterProvider>
     <App />
+    </WatchLaterProvider>
     </LikeProvider>
     </BrowserRouter>
   </React.StrictMode>,
