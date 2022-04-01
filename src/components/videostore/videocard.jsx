@@ -2,10 +2,12 @@ import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
-import {useLike} from "./../../context/index"
+import {useLike,useWatchLater} from "./../../context/index"
 const VideoCard = ({product,index}) => {
 const{_id,title,description,charactor} = product
+
 const {likeState,likeDispatch} = useLike()
+const{watchLaterDispatch} = useWatchLater()
   return (
     
     <div class="border-skin text-overlay-card-dimension card-relative video-card">
@@ -25,7 +27,12 @@ const {likeState,likeDispatch} = useLike()
         payload: {_id,title,description,charactor}
         })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
-      <MdOutlineWatchLater color= "#ffff" size="3rem"/>
+      <MdOutlineWatchLater color= "#ffff" size="3rem"
+      onClick = {() => watchLaterDispatch({
+          type: "WATCH_LATER",
+          payload: {_id,title,description,charactor}
+        })}
+      />
       </div>
       </div>
   )
