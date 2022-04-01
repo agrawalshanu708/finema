@@ -1,9 +1,14 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext,useReducer } from "react";
+import {likeReducer} from "./../reducer/index"
 
 const LikeContext = createContext();
 const LikeProvider = ({children}) => {
+  
+const[likeState,likeDispatch] = useReducer(likeReducer,{
+    likedItems :[]
+})    
     return (
-        <LikeContext.Provider value = {{value: 8}}>
+        <LikeContext.Provider value = {{likeState,likeDispatch}}>
             {children}
         </LikeContext.Provider>
     )

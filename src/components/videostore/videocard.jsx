@@ -2,8 +2,11 @@ import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
+import {useLike} from "./../../context/index"
 const VideoCard = ({product,index}) => {
 const{_id,title,description,charactor} = product
+const {likeState,likeDispatch} = useLike()
+console.log(likeState)
   return (
     
     <div class="border-skin text-overlay-card-dimension card-relative video-card">
@@ -18,7 +21,10 @@ const{_id,title,description,charactor} = product
       Visit ten places on our planet that are undergoing the biggest
       changes today</div>
     <div class="card-footer-box card__icons">
-      <AiOutlineHeart color = "#AB542F" size="3rem"/>
+      <AiOutlineHeart color = "#AB542F" size="3rem" onClick = {() => likeDispatch({
+        type:"ADD_TO_LIKE",
+        payload: {_id,title,description,charactor}
+        })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
       <MdOutlineWatchLater color= "#ffff" size="3rem"/>
       </div>
