@@ -1,0 +1,40 @@
+:root {
+    --dark-black: #050505;
+    --light-black: #4d4447;
+    --white-color: #ffffff;
+    --primary-color: #AB542F;
+}
+
+
+.navbar {
+display: flex;
+justify-content:space-between;
+height: 9vh;
+/* align-items: center; */
+}
+.navbar__logo{
+
+}
+.navbar__media{
+    height: 100%;
+    width: 10rem;
+}
+.navbar__media img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.navbar__genre{
+display: flex;
+gap: 2rem;
+margin: auto;
+}
+
+.navbar__text {
+ color: var(--white-color);
+ font-size: 2rem;
+}
+.navbar__profile{
+    margin: auto 0;
+}
