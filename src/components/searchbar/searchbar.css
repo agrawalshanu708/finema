@@ -1,0 +1,39 @@
+:root {
+    --dark-black: #050505;
+    --light-black: #292524;
+    --white-color: #ffffff;
+    --primary-color: #AB542F;
+}
+
+.searchbar{
+    height: 15vh;
+    background-color: var(--light-black);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0 4rem;
+    width:94%;
+    margin: auto;
+    
+
+}
+.searchbar__category{
+    display: flex;
+    gap: 3rem;
+
+}
+.searchbar__category >span{
+    font-size:2.5rem;
+    color: var(--white-color)
+}
+.searchbar__input > input{
+    width: 50rem;
+    height: 5rem;
+}
+.btn{
+    background-color:var(--primary-color);
+    color: var(--white-color);
+    border-radius:0.8rem;
+    margin-left: 2rem;
+}
