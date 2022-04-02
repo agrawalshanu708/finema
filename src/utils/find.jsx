@@ -1,5 +1,5 @@
 
-  const checkInWatch = (id,product) => {
+  const checkInArray = (id,product) => {
     return product.find(item => item._id === id)
   }
-  export{checkInWatch}
+  export{checkInArray}

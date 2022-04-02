@@ -2,14 +2,14 @@ import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay,MdOutlineWatchLater} from "react-icons/md"
 import {useLike,useWatchLater} from "./../../context/index"
-import { checkInWatch } from '../../utils/index'
+import { checkInArray } from '../../utils/index'
 
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
     const{likeDispatch} = useLike()
     const{ watchLaterState ,watchLaterDispatch} = useWatchLater()
   
-    const isItem = checkInWatch(_id,watchLaterState.watchLaterItems)
+    const isItem = checkInArray(_id,watchLaterState.watchLaterItems)
     const watchLaterHandler = (id,product) => {
       if(isItem){
         watchLaterDispatch({

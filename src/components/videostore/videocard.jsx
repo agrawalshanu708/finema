@@ -2,7 +2,7 @@ import { useState} from 'react'
 import { AiOutlineHeart } from "react-icons/ai"
 import { MdOutlinePlaylistPlay, MdOutlineWatchLater,MdWatchLater } from "react-icons/md"
 import { useLike, useWatchLater, useHistory } from "./../../context/index"
-import{checkInWatch} from "./../../utils/index"
+import{checkInArray} from "./../../utils/index"
 const VideoCard = ({ product, index }) => {
 
   const { _id, title, description, charactor } = product
@@ -13,9 +13,9 @@ const VideoCard = ({ product, index }) => {
 
 
 
-const isItem = checkInWatch(_id,watchLaterState.watchLaterItems)
-const addInWatchlaterHandler = (id,product) => {
-  if(isItem){
+const isWatchItem = checkInArray(_id,watchLaterState.watchLaterItems)
+const watchlaterHandler = (id,product) => {
+  if(isWatchItem){
     watchLaterDispatch({
     type:"REMOVE_FROM_WATCH_LATER",
     payload: id
@@ -27,13 +27,10 @@ const addInWatchlaterHandler = (id,product) => {
           })
   }
 }
-
-const findInLike = (id,product) => {
-  return product.find(item => item._id === id)
-}   
-const isLike = findInLike(_id,likeState.likeItems)
-const likeHandler = (product, id) => {
- isLike ?  likeDispatch({
+ 
+const isLikeItem = checkInArray(_id,likeState.likeItems)
+const likeHandler = ( id,product) => {
+ isLikeItem ?  likeDispatch({
    type:"REMOVE_FROM_LIKE",
    payload: id
    }) :  likeDispatch({
@@ -58,10 +55,10 @@ const likeHandler = (product, id) => {
         Visit ten places on our planet that are undergoing the biggest
         changes today</div>
       <div class="card-footer-box card__icons">
-        <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeHandler(product,_id)} />
+        <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeHandler(_id,product)} />
         <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
         <MdOutlineWatchLater color="#AB542F" size="3rem"  onClick={() =>  {
-          addInWatchlaterHandler(_id,product)}}/>   
+          watchlaterHandler(_id,product)}}/>   
       </div>
     </div>
   )
