@@ -15,7 +15,7 @@ const[getVideo, setGetVideo] = useState([])
   
   return (
     <>
-    <div className="videostore col-9">
+    <div className="videostore col-10">
         <p>Popular</p>
         <div className="videostore_container">
             {

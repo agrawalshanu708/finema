@@ -21,7 +21,7 @@ const WatchLaterCard = ({product,index}) => {
       changes today</div>
     <div class="card-footer-box card__icons">
       <AiOutlineHeart color = "#AB542F" size="3rem" onClick = {() => watchlaterDispatch({
-        type:"REMOVE_FROM_WATCHLATER",
+        type:"REMOVE_FROM_LIKE",
         payload: index
         })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>

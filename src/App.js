@@ -1,9 +1,8 @@
 import "./App.css";
 import logo from "./logo.png";
 import { Routes, Route, Link } from "react-router-dom";
-import {Navbar} from "./components/index"
-import {Searchbar} from "./components/index"
-import {Home,LikePage,WatchLaterPage} from "./pages/index"
+import {Navbar,Searchbar} from "./components/index"
+import {Home,LikePage,WatchLaterPage,HistoryPage} from "./pages/index"
 function App() {
   return (
     <div className="App">
@@ -13,6 +12,7 @@ function App() {
       <Route path="/" element = {<Home/>}/>
       <Route path = "/like" element = {<LikePage/>}/>
       <Route path = "/watchlater" element = {<WatchLaterPage/>}/>
+      <Route path = "/history" element = {<HistoryPage/>}/>
     </Routes>
     </div>
   );

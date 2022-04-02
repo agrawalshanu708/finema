@@ -1,0 +1,11 @@
+.historypage{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.card_close{
+    position: absolute;
+    top:2%;
+    right:2%;
+}
+

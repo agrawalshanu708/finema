@@ -1,8 +1,8 @@
 import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
-import {MdOutlinePlaylistPlay} from "react-icons/md"
-import {MdOutlineWatchLater} from"react-icons/md"
+import {MdOutlinePlaylistPlay,MdOutlineWatchLater} from "react-icons/md"
 import {useLike} from "./../../context/index"
+
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
     const{likeDispatch} = useLike()
