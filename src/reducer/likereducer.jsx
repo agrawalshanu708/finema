@@ -6,7 +6,7 @@ const likeReducer = (likeState,likeAction) => {
 }            
      case "REMOVE_FROM_LIKE":
     return {...likeState, 
-    likeItems :  likeState.likeItems.filter((item,ind) => ind !== likeAction.payload )     
+    likeItems :  likeState.likeItems.filter(item => item._id !== likeAction.payload )     
 
     }
     default:

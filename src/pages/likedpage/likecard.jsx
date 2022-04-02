@@ -5,7 +5,8 @@ import {useLike} from "./../../context/index"
 
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
-    const{likeDispatch} = useLike()
+    const{likeState ,likeDispatch} = useLike()
+
 
     return (
     <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
@@ -20,10 +21,10 @@ const LikeCard = ({product,index}) => {
       Visit ten places on our planet that are undergoing the biggest
       changes today</div>
     <div class="card-footer-box card__icons">
-      <AiOutlineHeart color = "#AB542F" size="3rem" onClick = {() => likeDispatch({
-        type:"REMOVE_FROM_LIKE",
-        payload: index
-        })}/>
+      <AiOutlineHeart color = "#AB542F" size="3rem" onClick = {() => likeDispatch({ 
+        type :"REMOVE_FROM_LIKE",
+        payload: _id
+      })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
       <MdOutlineWatchLater color= "#ffff" size="3rem"/>
       </div>

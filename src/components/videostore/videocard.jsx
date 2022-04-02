@@ -28,6 +28,19 @@ const addInWatchlaterHandler = (id,product) => {
   }
 }
 
+const findInLike = (id,product) => {
+  return product.find(item => item._id === id)
+}   
+const isLike = findInLike(_id,likeState.likeItems)
+const likeHandler = (product, id) => {
+ isLike ?  likeDispatch({
+   type:"REMOVE_FROM_LIKE",
+   payload: id
+   }) :  likeDispatch({
+     type:"ADD_TO_LIKE",
+     payload: product
+     })
+} 
   return (
 
     <div class="border-skin text-overlay-card-dimension card-relative video-card">
@@ -45,10 +58,7 @@ const addInWatchlaterHandler = (id,product) => {
         Visit ten places on our planet that are undergoing the biggest
         changes today</div>
       <div class="card-footer-box card__icons">
-        <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeDispatch({
-          type: "ADD_TO_LIKE",
-          payload: product
-        })} />
+        <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeHandler(product,_id)} />
         <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
         <MdOutlineWatchLater color="#AB542F" size="3rem"  onClick={() =>  {
           addInWatchlaterHandler(_id,product)}}/>   
