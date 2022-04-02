@@ -4,7 +4,10 @@ const watchLaterReducer = (watchLaterState,watchLaterAction) => {
    return {...watchLaterState, 
   watchLaterItems: [...watchLaterState.watchLaterItems, watchLaterAction.payload]
 }   
-
+    case "REMOVE_FROM_WATCH_LATER":
+      return {...watchLaterState,
+     watchLaterItems : watchLaterState.watchLaterItems.filter(item => item._id !== watchLaterAction.payload) 
+    }  
 default:
             return watchLaterState
     
