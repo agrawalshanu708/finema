@@ -1,6 +1,6 @@
 const historyReducer = (historyState,historyAction) => {
     switch (historyAction.type) {
-        case "ADD_IN_HISTORY":
+        case "ADD_TO_HISTORY":
     return {...historyState,
     historyItems: [ historyAction.payload, ...historyState.historyItems]
     }            

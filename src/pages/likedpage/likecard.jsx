@@ -1,14 +1,25 @@
 import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay,MdOutlineWatchLater} from "react-icons/md"
-import {useLike,useWatchLater} from "./../../context/index"
+import {useLike,useWatchLater,useHistory} from "./../../context/index"
 import { checkInArray } from '../../utils/index'
 
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
     const{likeDispatch} = useLike()
     const{ watchLaterState ,watchLaterDispatch} = useWatchLater()
+    const{ historyState,historyDispatch} = useHistory();
   
+    const isHistoryItem = checkInArray(_id,historyState.historyItems)
+  const historyHandler = (id,product) => {
+    if(!isHistoryItem){
+      historyDispatch({ 
+              type:"ADD_TO_HISTORY",
+              payload : product
+            })
+    
+  }}
+
     const isItem = checkInArray(_id,watchLaterState.watchLaterItems)
     const watchLaterHandler = (id,product) => {
       if(isItem){
@@ -26,7 +37,7 @@ const LikeCard = ({product,index}) => {
 
     return (
     <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
-    <div class="text-overlay-card-img-box">
+    <div class="text-overlay-card-img-box" onClick={() => historyHandler(_id,product)}>
       <img
       src={`https://i.ytimg.com/vi/${_id}/hq720.jpg`}
     />
