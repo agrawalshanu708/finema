@@ -1,12 +1,28 @@
 import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay,MdOutlineWatchLater} from "react-icons/md"
-import {useLike} from "./../../context/index"
+import {useLike,useWatchLater} from "./../../context/index"
+import { checkInWatch } from '../../utils/index'
 
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
-    const{likeState ,likeDispatch} = useLike()
-
+    const{likeDispatch} = useLike()
+    const{ watchLaterState ,watchLaterDispatch} = useWatchLater()
+  
+    const isItem = checkInWatch(_id,watchLaterState.watchLaterItems)
+    const watchLaterHandler = (id,product) => {
+      if(isItem){
+        watchLaterDispatch({
+        type:"REMOVE_FROM_WATCH_LATER",
+        payload: id
+      })
+      }else{
+        watchLaterDispatch({ 
+                type:"ADD_TO_WATCH_LATER",
+                payload : product
+              })
+      }
+    }
 
     return (
     <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
@@ -26,7 +42,7 @@ const LikeCard = ({product,index}) => {
         payload: _id
       })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
-      <MdOutlineWatchLater color= "#ffff" size="3rem"/>
+      <MdOutlineWatchLater color= "#ffff" size="3rem" onClick = {() => watchLaterHandler(_id,product)}/>
       </div>
       </div>
   )

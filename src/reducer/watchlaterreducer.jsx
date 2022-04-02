@@ -1,6 +1,6 @@
 const watchLaterReducer = (watchLaterState,watchLaterAction) => {
     switch (watchLaterAction.type) {
-        case "WATCH_LATER":
+        case "ADD_TO_WATCH_LATER":
    return {...watchLaterState, 
   watchLaterItems: [...watchLaterState.watchLaterItems, watchLaterAction.payload]
 }   

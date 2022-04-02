@@ -22,7 +22,7 @@ const addInWatchlaterHandler = (id,product) => {
   })
   }else{
     watchLaterDispatch({ 
-            type:"WATCH_LATER",
+            type:"ADD_TO_WATCH_LATER",
             payload : product
           })
   }

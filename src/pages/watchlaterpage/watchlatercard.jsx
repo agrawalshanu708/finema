@@ -7,6 +7,9 @@ const WatchLaterCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
     const{watchLaterDispatch} = useWatchLater()
 
+
+ 
+
     return (
     <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
     <div class="text-overlay-card-img-box">
