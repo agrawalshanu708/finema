@@ -17,7 +17,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <storeProvider>
+      <StoreProvider>
       <LikeProvider>
         <WatchLaterProvider>
           <HistoryProvider>
@@ -25,7 +25,7 @@ ReactDOM.render(
           </HistoryProvider>
         </WatchLaterProvider>
       </LikeProvider>
-      </storeProvider>
+      </StoreProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
