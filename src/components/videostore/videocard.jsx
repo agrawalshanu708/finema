@@ -11,7 +11,8 @@ const VideoCard = ({ product, index }) => {
   const { historyState,historyDispatch } = useHistory()
 
 
-  const isHistoryItem = checkInArray(_id,historyState.historyItems)
+
+const isHistoryItem = checkInArray(_id,historyState.historyItems)
   const historyHandler = (id,product) => {
     if(!isHistoryItem){
       historyDispatch({ 
@@ -21,7 +22,6 @@ const VideoCard = ({ product, index }) => {
     
   }}
    
-
 const isWatchItem = checkInArray(_id,watchLaterState.watchLaterItems)
 const watchlaterHandler = (id,product) => {
   if(isWatchItem){
@@ -61,8 +61,8 @@ const likeHandler = ( id,product) => {
         Visit ten places on our planet that are undergoing the biggest
         changes today</div>
       <div class="card-footer-box card__icons">
-        <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeHandler(_id,product)} />
-        <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
+        <AiOutlineHeart color="#AB542F" size="3rem" onClick = {() => likeHandler(_id,product)}  />
+        <MdOutlinePlaylistPlay color="#AB542F"size="3rem" onClick = {() => {}} />
         <MdOutlineWatchLater color="#AB542F" size="3rem"  onClick={() =>  {
           watchlaterHandler(_id,product)}}/>   
       </div>

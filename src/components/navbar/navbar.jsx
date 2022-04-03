@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
 <div className="navbar__badge">
-<span className="navbar__text">Playlist</span>
+<Link to = "/playlist"><span className="navbar__text">Playlist</span></Link> 
 <span className="navbar__badge_number navbar__text">2</span>
 </div>
 
