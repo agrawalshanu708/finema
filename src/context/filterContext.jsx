@@ -1,7 +1,13 @@
 import { useContext, createContext, useReducer } from "react";
+import { filterReducer } from "../reducer/index";
 const FilterContext = createContext();
 const FilterProvider = ({ children }) => {
-  return <FilterContext.Provider value={{}}>{children}</FilterContext.Provider>;
+    const[filterState,filterDispatch] = useReducer(filterReducer,{
+
+    })
+  return <FilterContext.Provider value={{filterState,filterDispatch}}>
+      {children}
+      </FilterContext.Provider>;
 };
 const useFilter = () => useContext(FilterContext);
 
