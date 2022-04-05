@@ -3,7 +3,7 @@ import { filterReducer } from "../reducer/index";
 const FilterContext = createContext();
 const FilterProvider = ({ children }) => {
     const[filterState,filterDispatch] = useReducer(filterReducer,{
-
+     filterBy: null
     })
   return <FilterContext.Provider value={{filterState,filterDispatch}}>
       {children}

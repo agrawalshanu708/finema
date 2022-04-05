@@ -1,73 +1,61 @@
-:root {
-    --dark-black: #050505;
-    --light-black: #4d4447;
-    --white-color: #ffffff;
-    --primary-color: #AB542F;
-}
-
-
 .navbar {
-display: flex;
-justify-content:space-between;
-height: 9vh;
-/* align-items: center; */
+  display: flex;
+  justify-content: space-between;
+  height: 9vh;
 }
-.navbar__logo{
+.navbar__logo {
   display: flex;
   gap: 1rem;
-  align-items:center;
+  align-items: center;
   margin-left: 5rem;
 }
-.navbar__media{
-    height: 100%;
-    width: 10rem;
+.navbar__media {
+  height: 100%;
+  width: 10rem;
 }
-.navbar__media img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.navbar__media img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
-.navbar__logoname{
-    color: var(--primary-color);
-    font-family: 'Fredoka One', cursive;
-    font-size: 4rem;
+.navbar__logoname {
+  color: var(--primary-color);
+  font-family: "Fredoka One", cursive;
+  font-size: 4rem;
 }
-.navbar__genre{
-display: flex;
-gap: 2rem;
-margin: auto;
-align-items: center;
+.navbar__genre {
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+  align-items: center;
 }
 
 .navbar__text {
- color: var(--white-color);
- font-size: 2rem;
+  color: var(--white-color);
+  font-size: 2rem;
 }
-.navbar__profile{
-    /* margin-right: 4rem; */
-    margin: auto 4rem
+.navbar__profile {
+  margin: auto 4rem;
 }
 
-
-
-.navbar__badge{
-    padding :  1rem 1.5rem;
-    position:relative;
-    width: fit-content;
-    display: flex;
-    align-items:center;
+.navbar__badge {
+  padding: 1rem 1.5rem;
+  position: relative;
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }
-.navbar__badge_number{
-position: absolute;
-background-color: var(--primary-color);
-width: 3rem;
-height: 3rem;
-border-radius: 50%;
-display: flex;
-align-items:center;
-justify-content: center;
-font-size:2rem;
-right: -5px;
-top:-8px;
-color: #ffff
+.navbar__badge_number {
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  right: -5px;
+  top: -8px;
+  color: #ffff;
 }
