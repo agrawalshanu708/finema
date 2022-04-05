@@ -16,12 +16,16 @@ const Navbar = () => {
     </div >
     <span className="navbar__logoname">Finema</span>
 </div></Link>
+
+
 <div className="navbar__genre">
 
-<div className="navbar__badge">
-<Link to = "/like"> <span className="navbar__text">Likes</span></Link>
-<span className="navbar__badge_number navbar__text">{likeState.likeItems.length}</span>
-</div>
+<div class="navbar__badge">
+               <Link to = "/wishlist"class="navbar__text">Likes</Link>
+                <span class="navbar__badge_number navbar__text">{likeState.likeItems.length}</span>
+               </div>
+
+
 
 <Link to = "/history"><span className="navbar__text">History</span></Link> 
 
