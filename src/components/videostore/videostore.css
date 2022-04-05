@@ -1,51 +1,54 @@
-.video-card{
-border: none;
+.video-card {
+  border: none;
 }
-p{
-    color: #ffff
+p {
+  color: var(--white-color);
 }
-.border-skin,.text-overlay-card-img-box{
-    width: 40rem;
+.border-skin,
+.text-overlay-card-img-box {
+  width: 40rem;
 }
 .text-overlay-card-img-box img {
-    width: 95%;
-    object-fit: cover;
+  width: 95%;
+  object-fit: cover;
 }
 
-.videostore_container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    width: 100vw;
+.videostore_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100vw;
 }
-.card-desc{
-    color: #ffff
+.total_product_text {
+  color: var(--primary-color);
 }
-.card-footer-box >a {
-    color: #ffff
+.card-desc {
+  color: var(--white-color);
 }
-.card__icons{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.card-footer-box > a {
+  color: var(--white-color);
 }
-.card__modal{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var( --primary-color);
-    gap: 1rem;
-    cursor: pointer;
-    padding: 1rem 1rem;
-    width: 20rem;
-    background-color:var( --dark-black);
-    z-index: 99;
-    margin-top: 1rem;
-
+.card__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.card__modal >span{
-    font-size: 2rem;
+.card__modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-color);
+  gap: 1rem;
+  cursor: pointer;
+  padding: 1rem 1rem;
+  width: 20rem;
+  background-color: var(--dark-black);
+  z-index: 99;
+  margin-top: 1rem;
 }
-.card__modal >span:hover{
-color: var( --primary-color)
+.card__modal > span {
+  font-size: 2rem;
+}
+.card__modal > span:hover {
+  color: var(--primary-color);
 }

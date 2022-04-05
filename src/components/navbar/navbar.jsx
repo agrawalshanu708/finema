@@ -11,7 +11,6 @@ const Navbar = () => {
     <>
       <div className="navbar">
         <Link to="/">
-          {" "}
           <div className="navbar__logo">
             <div className="navbar__media">
               <img src={logo} alt="" />
@@ -22,7 +21,7 @@ const Navbar = () => {
 
         <div className="navbar__genre">
           <div class="navbar__badge">
-            <Link to="/wishlist" class="navbar__text">
+            <Link to="/like" class="navbar__text">
               Likes
             </Link>
             <span class="navbar__badge_number navbar__text">

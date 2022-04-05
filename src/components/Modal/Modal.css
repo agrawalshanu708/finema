@@ -3,7 +3,7 @@
     width: 50%;
     position: absolute;
     top: 2%;
-     left: 30%;
+    left: 30%;
     border: 1px solid var( --primary-color);
     height: 45%;
     z-index: 99;
@@ -11,7 +11,7 @@
     padding: 2rem 10rem;
 }
 .hr{
-    border-top: 1px solid var(--primary-color);
+   border-top: 1px solid var(--primary-color);
    margin: 1rem 0
 }
 .playlistModal input{

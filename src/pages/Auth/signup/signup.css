@@ -25,7 +25,8 @@
     background: none;
     display: block;
     margin: 3rem auto;
-    color: white;
+    color: var(--white-color);
+
     text-align: center;
     border: 2px solid var(--primary-color);
     width: 35rem;
