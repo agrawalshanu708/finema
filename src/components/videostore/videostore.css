@@ -31,3 +31,23 @@ p{
     align-items: center;
     gap: 0.5rem;
 }
+.card__modal{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var( --primary-color);
+    gap: 1rem;
+    cursor: pointer;
+    padding: 1rem 1rem;
+    width: 20rem;
+    background-color:var( --dark-black);
+    z-index: 99;
+    margin-top: 1rem;
+
+}
+.card__modal >span{
+    font-size: 2rem;
+}
+.card__modal >span:hover{
+color: var( --primary-color)
+}

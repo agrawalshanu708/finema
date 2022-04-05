@@ -5,7 +5,9 @@ const StoreContext = createContext();
 const StoreProvider = ({children}) => {
   
 const[storeState,storeDispatch] = useReducer(storeReducer, {
-    storeItems: []
+    storeItems: [],
+    modal: false
+  
 })
 
 

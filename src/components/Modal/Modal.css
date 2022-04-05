@@ -1,0 +1,58 @@
+.playlistModal{
+    background-color: var(--dark-black);
+    width: 50%;
+    position: absolute;
+    top: 2%;
+     left: 30%;
+    border: 1px solid var( --primary-color);
+    height: 45%;
+    z-index: 99;
+    border-radius: 1rem;
+    padding: 2rem 10rem;
+}
+.hr{
+    border-top: 1px solid var(--primary-color);
+   margin: 1rem 0
+}
+.playlistModal input{
+    width: 100%;
+    padding: 1rem;
+}
+.playlist__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.playlist__form__textarea{
+  max-height: 10rem;
+  max-width: 100%;
+}
+
+.playlist__form__label{
+    font-size: 2rem;
+}
+
+.button{
+    padding: 1rem 2rem;
+    border: none;
+}
+.primary_btn{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    
+}
+.secondary_btn{
+    color: var(--primary-color);
+    background: transparent;
+    border: 1px solid var(--primary-color);
+}
+.align__vertical{
+    display:flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.align__horizontal{
+    display:flex;
+    gap: 2rem;
+    margin-top: 4rem;
+}
