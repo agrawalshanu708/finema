@@ -23,9 +23,9 @@ export const videos = [
     
     _id: "IgKWPdJWuBQ",
     title: "talks",
+    charactor: "Elon Musk",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    charactor: "Elon Musk",
     modal: false,
     link:"https://youtu.be/IgKWPdJWuBQ"
   },
@@ -33,16 +33,16 @@ export const videos = [
     _id: "bXGhtjezJPY",
     title: "talks",
     charactor: "Jack Ma",
-    modal: false,
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    modal: false,
     link: "https://youtu.be/bXGhtjezJPY"
   },
   {
     _id: "_Hk7nl8LbQA",
     title: "talks",
     charactor: "Ratan Tata",
-    modal: false,
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    modal: false,
     link: "https://www.youtube.com/watch?v=PJ2wjBt3Xeg"
   },
 ];
