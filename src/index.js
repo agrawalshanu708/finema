@@ -8,7 +8,8 @@ import {
   LikeProvider,
   WatchLaterProvider,
   HistoryProvider,
-  StoreProvider
+  StoreProvider,
+  FilterProvider,
 } from "./context/index";
 
 // Call make Server
@@ -17,15 +18,17 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <StoreProvider>
-      <LikeProvider>
-        <WatchLaterProvider>
-          <HistoryProvider>
-            <App />
-          </HistoryProvider>
-        </WatchLaterProvider>
-      </LikeProvider>
-      </StoreProvider>
+      <FilterProvider>
+        <StoreProvider>
+          <LikeProvider>
+            <WatchLaterProvider>
+              <HistoryProvider>
+                <App />
+              </HistoryProvider>
+            </WatchLaterProvider>
+          </LikeProvider>
+        </StoreProvider>
+      </FilterProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
