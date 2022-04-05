@@ -1,14 +1,12 @@
 body {
   min-height: 100vh;
   background-color: var(--dark-black);
-  color: var(--white-color);
+ color: var(--white-color);
 }
 
 :root {
  --dark-black: #050505;
- --light-black: #4d4447;
+ --light-black: #18181b;
  --white-color: #ffffff;
  --primary-color: #AB542F;
-
-
 }
