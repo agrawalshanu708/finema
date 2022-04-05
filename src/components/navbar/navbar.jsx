@@ -38,7 +38,7 @@ const Navbar = () => {
 
 </div>
 <div className="navbar__profile">
-    <span className="navbar__text">Login</span>
+  <Link to = "./login"> <span className="navbar__text">Login</span></Link> 
 </div>
     </div>
     </>
