@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
 <div className="navbar__badge">
-<span className="navbar__text">Playlist</span>
+<Link to = "/playlist"><span className="navbar__text">Playlist</span></Link> 
 <span className="navbar__badge_number navbar__text">2</span>
 </div>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
 
 </div>
 <div className="navbar__profile">
-    <span className="navbar__text">Login</span>
+  <Link to = "./login"> <span className="navbar__text">Login</span></Link> 
 </div>
     </div>
     </>

@@ -9,21 +9,24 @@ export const videos = [
   title: "talks",
   charactor: "sunadar pichai",
   description: "",
+  modal: false,
   link: "https://www.youtube.com/watch?v=-yLlMk41sro"
 },{
   _id: "Lb4IcGF5iTQ",
   title: "talks",
   charactor: "Mark Zuckerberg",
   description: "",
+  modal: false,
   link: "https://www.youtube.com/watch?v=Lb4IcGF5iTQ"
 }
   ,{
     
     _id: "IgKWPdJWuBQ",
     title: "talks",
+    charactor: "Elon Musk",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    charactor: "Elon Musk",
+    modal: false,
     link:"https://youtu.be/IgKWPdJWuBQ"
   },
   {
@@ -31,6 +34,7 @@ export const videos = [
     title: "talks",
     charactor: "Jack Ma",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    modal: false,
     link: "https://youtu.be/bXGhtjezJPY"
   },
   {
@@ -38,6 +42,7 @@ export const videos = [
     title: "talks",
     charactor: "Ratan Tata",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+    modal: false,
     link: "https://www.youtube.com/watch?v=PJ2wjBt3Xeg"
   },
 ];
