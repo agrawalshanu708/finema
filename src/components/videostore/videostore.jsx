@@ -17,7 +17,7 @@ const VideoStore = () => {
       <p>Showing Result <span className="total_product_text">{finalItems.length}</span> </p>
       <div className="videostore_container col-12">
         {finalItems.map((product) => (
-          <VideoCard product={product} />
+          <VideoCard product={product} /> 
         ))}
       </div>
     </>
