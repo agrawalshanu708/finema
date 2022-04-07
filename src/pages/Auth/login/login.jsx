@@ -1,26 +1,57 @@
-import React from 'react'
-import "./login.css"
-import {Link} from "react-router-dom"
+import React from "react";
+import "./login.css";
+import {useState} from "react"
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
-  return (
-    <>
-    <div>
-        <form action="" className="login__form">
-            <div className="login__form__text">Login</div>
-            <input type="text" placeholder="xyz@abc.com" name="" />
-            <input type="password" placeholder="user password" name="" />
-            <input type="submit" value= "Login" className="button primary_btn"/>
-            <div className="signup__link">
-            <div className="small_text">Not a member?</div>
-            <Link to = "/signup" ><span className="signup_text">Signup</span></Link> 
-            </div>
-            </form>
+const navigate = useNavigate()
 
-    
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+ 
 
-    </div>
-    </>
-  )
+  const loginHandler = async () => {
+    const body = {
+    email : email,
+    password : password,
+ }
+try {
+  const response = await axios.post("/api/auth/login",body)
+  response.data.encodedToken? navigate("/") : alert("login failed")
+
+} catch (error) {
+  console.error("error")
 }
 
-export {Login}
+}
+  return (
+    <>
+      <div>
+        <div className="login__form">
+          <div className="login__form__text">Login</div>
+          <input
+            type="text"
+            placeholder="xyz@abc.com"
+            name=""
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="user password"
+            name=""
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="button primary_btn" onClick={() => loginHandler()}>Login</button>
+          <div className="signup__link">
+            <div className="small_text">Not a member?</div>
+            <Link to="/signup">
+              <span className="signup_text">Signup</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export { Login };
