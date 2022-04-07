@@ -1,0 +1,28 @@
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.banner-heading {
+  margin-top: 5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 5rem;
+  width: 65%;
+}
+.banner-button {
+  width: 15rem;
+  height: 4rem;
+  background-color: #090a0c;
+  color: #f9f9f9;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #090a0c;
+}
+.banner-images {
+  height: 45rem;
+  display: flex;
+}
+.finance-text {
+  color: var(--primary-color);
+}
