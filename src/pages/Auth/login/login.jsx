@@ -2,9 +2,9 @@ import React from "react";
 import "./login.css";
 import {useState} from "react"
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
-
+const navigate = useNavigate()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +17,7 @@ const Login = () => {
  }
 try {
   const response = await axios.post("/api/auth/login",body)
-  response.data.encodedToken? alert("login successfully"):alert("login failed")
+  response.data.encodedToken? navigate("/") : alert("login failed")
 
 } catch (error) {
   console.error("error")
