@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
 import {
   MdOutlinePlaylistPlay,
   MdOutlineWatchLater,
@@ -76,11 +76,17 @@ const VideoCard = ({ product}) => {
         today
       </div>
       <div class="card-footer-box card__icons">
-        <AiOutlineHeart
+   { isLikeItem ? <AiFillHeart
           color="#AB542F"
           size="3rem"
           onClick={() => likeHandler(_id, product)}
-        />
+        /> :   <AiOutlineHeart
+          color="#AB542F"
+          size="3rem"
+          onClick={() => likeHandler(_id, product)}
+        />}
+
+        
         <MdOutlinePlaylistPlay color="#AB542F" size="3rem" onClick={() => storeDispatch({
           type : "SMALL_MODAL",
           payload: _id
