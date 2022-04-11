@@ -10,6 +10,7 @@ import {
   HistoryProvider,
   StoreProvider,
   FilterProvider,
+  PlaylistProvider
 } from "./context/index";
 
 // Call make Server
@@ -18,6 +19,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <PlaylistProvider>
       <FilterProvider>
         <StoreProvider>
           <LikeProvider>
@@ -29,6 +31,7 @@ ReactDOM.render(
           </LikeProvider>
         </StoreProvider>
       </FilterProvider>
+      </PlaylistProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
