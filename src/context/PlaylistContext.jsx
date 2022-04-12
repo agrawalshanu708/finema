@@ -1,10 +1,10 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext,useState} from "react";
 
 const PlaylistContext = createContext();
 const PlaylistProvider = ({ children }) => {
-
+const[openPlaylistModal,setOpenPlaylistModal] = useState(false)
   return (
-    <PlaylistContext.Provider value={{  }}>
+    <PlaylistContext.Provider value={{ openPlaylistModal,setOpenPlaylistModal }}>
       {children}
     </PlaylistContext.Provider>
   );
