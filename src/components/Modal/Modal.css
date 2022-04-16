@@ -1,14 +1,32 @@
-.playlistModal{
+.playlistmodal-page{
+    position: absolute;
+}
+/* .playlistModal{
     background-color: var(--dark-black);
-    width: 30%;
+    width: 60%;
     position:absolute;
-    top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     border: 1px solid var( --primary-color);
     height: 30%;
     z-index: 99;
     border-radius: 1rem;
     padding: 2rem 10rem;
+} */
+.playlistModal{
+    position: fixed;
+    width: 60rem;
+    height: 30rem;
+    left: calc(-50vw + 50%);
+    right: calc(-50vw + 50%);
+    top: calc(-50vh + 50%);
+    bottom: calc(-50vh + 50%);
+    margin: auto;
+    z-index: 999;
+    background-color: var(--dark-black);
+    transition: 0.8s;
+    color: var(--primary-color);
+    border: 1px solid var( --primary-color);
 }
 .hr{
    border-top: 1px solid var(--primary-color);
@@ -55,4 +73,8 @@
     display:flex;
     gap: 2rem;
     margin-top: 4rem;
+    justify-content:center;
+}
+.playlist_name{
+    color: var(--primary-color);
 }

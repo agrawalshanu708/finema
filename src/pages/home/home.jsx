@@ -7,7 +7,7 @@ const{openPlaylistModal} = usePlaylist()
   return (
     <>
     <div className="homepage col-11">
-     {openPlaylistModal && <Modal/>}
+     
      <VideoStore/>
     </div>
     

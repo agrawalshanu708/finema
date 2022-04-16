@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useLike, useWatchLater, useHistory } from "./../../context/index";
+import { useLike, useWatchLater, useHistory,useAuth} from "./../../context/index";
 import { logo } from "./../../assets/index";
 const Navbar = () => {
   const { likeState } = useLike();
   const { watchLaterState } = useWatchLater();
   const { historyState } = useHistory();
+  const{auth} = useAuth();
   return (
     <>
       <div className="navbar">
@@ -52,7 +53,7 @@ const Navbar = () => {
         <div className="navbar__profile">
           <Link to="./login">
             {" "}
-            <span className="navbar__text">Login</span>
+            <span className="navbar__text">{auth.isAuth ?"Logout":"Login"}</span>
           </Link>
         </div>
       </div>
