@@ -42,7 +42,8 @@ const Modal = ({setShowModal,video}) => {
       const response = await axios.post(postLink, sendVideo, {
         headers: header,
       });
-      setPlaylists(response.data.playlist)
+      console.log(response)
+      setPlaylists(response.data.playlists)
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +51,7 @@ const Modal = ({setShowModal,video}) => {
   return (
     <div className="playlistmodal-page">
       <div className="playlistModal">
-        <p>Add this Video to a collection</p>
+        <p className="playlist_head">Add this Video to a collection</p>
         <div className="hr"></div>
 
         <div action="" className="playlist__form">
@@ -58,6 +59,7 @@ const Modal = ({setShowModal,video}) => {
             <input
               type="text"
               id="playlist_name"
+              className= "create__playlist__input"
               onChange={(e) => setTitle(e.target.value)}
             />
             <button
@@ -67,17 +69,19 @@ const Modal = ({setShowModal,video}) => {
               +
             </button>
           </div>
-
-          {playlists.length >= 0 &&
-            playlists.map((playlist) => (
-              <label key={playlist._id} className="playlist_name">
+            
+            <div className="playlist__name__outer">
+                        {playlists.length >= 0 &&
+            playlists.map((playlist) => (<div className="playlist__name__box">
                 <input
                   type="checkbox"
                   onChange={() => addVideoToPlaylist(video, playlist._id)}
                 ></input>
+                <label key={playlist._id} className="playlist_name">
                 {playlist.title}
               </label>
-            ))}
+              </div>))}</div>
+
           <div className="align__horizontal">
             <button className="button primary_btn" type="submit" onClick = {() => setShowModal(false)}>
               Create Collection

@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useLike, useWatchLater, useHistory,useAuth} from "./../../context/index";
+import { useLike, useWatchLater, useHistory,useAuth,usePlaylist} from "./../../context/index";
 import { logo } from "./../../assets/index";
 const Navbar = () => {
   const { likeState } = useLike();
   const { watchLaterState } = useWatchLater();
   const { historyState } = useHistory();
   const{auth} = useAuth();
+  const{playlists} = usePlaylist()
   return (
     <>
       <div className="navbar">
@@ -38,7 +39,7 @@ const Navbar = () => {
             <Link to="/playlist">
               <span className="navbar__text">Playlist</span>
             </Link>
-            <span className="navbar__badge_number navbar__text">2</span>
+            <span className="navbar__badge_number navbar__text">{playlists.length}</span>
           </div>
 
           <div className="navbar__badge">

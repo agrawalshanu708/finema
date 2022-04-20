@@ -15,6 +15,7 @@ import {
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
 import {Modal} from "../Modal/Modal"
+
 const VideoCard = ({ product }) => {
   const { _id, title, charactor, description, modal } = product;
   const { likeState, likeDispatch } = useLike();
