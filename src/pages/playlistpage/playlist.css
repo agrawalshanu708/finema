@@ -1,0 +1,10 @@
+.playlist-page{
+display:flex;
+flex-wrap: wrap;
+gap: 2rem;
+}
+.video_in_playlist__page{
+display:flex;
+gap: 1rem;
+flex-wrap: wrap;
+}

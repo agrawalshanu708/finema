@@ -18,13 +18,13 @@ const body = {
   lastName: lastName,
 }
 try {
-  const response = await axios.post("/api/auth/signup", body)
+const response = await axios.post("/api/auth/signup", body)
 localStorage.setItem("token", response.data.encodedToken)
 setTimeout(() => {
   navigate("/login")
 }, 1000);
 } catch (error) {
-  console.error(error)
+ alert("failed")
 }
 }
 

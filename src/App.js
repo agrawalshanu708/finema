@@ -3,6 +3,7 @@ import logo from "./logo.png";
 import { Routes, Route, Link } from "react-router-dom";
 import {Navbar,Searchbar} from "./components/index"
 import {Home,LikePage,WatchLaterPage,HistoryPage,Playlist,Login,Signup,LandingPage} from "./pages/index"
+import { VideosInPlaylist } from "./pages/playlistpage/videosInPlaylist";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
       <Route path = "/playlist" element = {<Playlist/>}/>
       <Route path = "/login" element = {<Login/>}/>
       <Route path = "/signup" element = {<Signup/>}/>
+      <Route path="/playlist/:id" element={<VideosInPlaylist/>} />
     </Routes>
     </div>
   );

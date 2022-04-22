@@ -1,6 +1,6 @@
-import { useState } from "react";
-import {Link} from "react-router-dom";
-import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
+import { useState ,Fragment} from "react";
+import { Link } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import {
   MdOutlinePlaylistPlay,
   MdOutlineWatchLater,
@@ -11,15 +11,17 @@ import {
   useWatchLater,
   useHistory,
   useStore,
+  usePlaylist,
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
-const VideoCard = ({ product}) => {
-  const { _id, title,charactor, description, modal } = product;
+import {Modal} from "../Modal/Modal"
+
+const VideoCard = ({ product }) => {
+  const { _id, title, charactor, description, modal } = product;
   const { likeState, likeDispatch } = useLike();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { historyState, historyDispatch } = useHistory();
-  const { storeState,storeDispatch } = useStore();
-
+  const [showModal, setShowModal] = useState(false);
   const isHistoryItem = checkInArray(_id, historyState.historyItems);
   const historyHandler = (id, product) => {
     if (!isHistoryItem) {
@@ -58,11 +60,14 @@ const VideoCard = ({ product}) => {
         });
   };
 
-
-
-
   return (
-    <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {_id}>
+    <Fragment>
+      {showModal && <Modal setShowModal={setShowModal} video={product}/>}
+    <div
+      class="border-skin text-overlay-card-dimension card-relative video-card"
+      key={_id}
+    >
+      
       <div
         class="text-overlay-card-img-box"
         onClick={() => historyHandler(_id, product)}
@@ -76,21 +81,25 @@ const VideoCard = ({ product}) => {
         today
       </div>
       <div class="card-footer-box card__icons">
-   { isLikeItem ? <AiFillHeart
-          color="#AB542F"
-          size="3rem"
-          onClick={() => likeHandler(_id, product)}
-        /> :   <AiOutlineHeart
-          color="#AB542F"
-          size="3rem"
-          onClick={() => likeHandler(_id, product)}
-        />}
+        {isLikeItem ? (
+          <AiFillHeart
+            color="#AB542F"
+            size="3rem"
+            onClick={() => likeHandler(_id, product)}
+          />
+        ) : (
+          <AiOutlineHeart
+            color="#AB542F"
+            size="3rem"
+            onClick={() => likeHandler(_id, product)}
+          />
+        )}
 
-        
-        <MdOutlinePlaylistPlay color="#AB542F" size="3rem" onClick={() => storeDispatch({
-          type : "SMALL_MODAL",
-          payload: _id
-        })} />
+        <MdOutlinePlaylistPlay
+          color="#AB542F"
+          size="3rem"
+          onClick={() => setShowModal(true)}
+        />
         <MdOutlineWatchLater
           color="#AB542F"
           size="3rem"
@@ -99,20 +108,8 @@ const VideoCard = ({ product}) => {
           }}
         />
       </div>
-
- {modal && <div className="card__modal">
-   <span>Talks</span>
-   <span>Business</span>
-   <span>watchlater</span>
-  
-<span onClick = {() => storeDispatch({
-     type: "MODAL"
-   })}>Create playlist +</span> 
-</div>} 
-
-
     </div>
-  );
+    </Fragment> );
 };
 
 export { VideoCard };

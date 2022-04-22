@@ -6,6 +6,7 @@ import {
   useWatchLater,
   useHistory,
   useStore,
+  usePlaylist
 } from "./../../context/index";
 import { checkInArray } from "../../utils/index";
 
@@ -15,8 +16,8 @@ const LikeCard = ({ product, index }) => {
   const { likeDispatch } = useLike();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { historyState, historyDispatch } = useHistory();
-  const { storeDispatch } = useStore();
 
+  const {openPlaylistModal,setOpenPlaylistModal}= usePlaylist()
   const isHistoryItem = checkInArray(_id, historyState.historyItems);
   const historyHandler = (id, product) => {
     if (!isHistoryItem) {
@@ -70,16 +71,8 @@ const LikeCard = ({ product, index }) => {
             })
           }
         />
-        <MdOutlinePlaylistPlay
-          color="#ffff"
-          size="4rem"
-          onClick={() =>
-            storeDispatch({
-              type: "SMALL_MODAL",
-              payload: _id,
-            })
-          }
-        />
+      <MdOutlinePlaylistPlay color="#AB542F" size="3rem" onClick={() => setOpenPlaylistModal(!openPlaylistModal)} />
+  
         <MdOutlineWatchLater
           color="#ffff"
           size="3rem"
@@ -87,22 +80,7 @@ const LikeCard = ({ product, index }) => {
         />
       </div>
 
-      {modal && (
-        <div className="card__modal">
-          <span>Talks</span>
-          <span>Business</span>
-          <span>watchlater</span>
-
-          <span
-            onClick={() =>
-              storeDispatch({
-                type: "MODAL",
-              })
-            }
-          >
-            Create playlist +
-          </span>
-        </div>
+   
       )}
     </div>
   );

@@ -3,12 +3,13 @@ import "./login.css";
 import {useState} from "react"
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import {useAuth} from "../../../context/index"
 const Login = () => {
 const navigate = useNavigate()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+ const{auth,setAuth} = useAuth();
 
   const loginHandler = async () => {
     const body = {
@@ -17,10 +18,19 @@ const navigate = useNavigate()
  }
 try {
   const response = await axios.post("/api/auth/login",body)
-  response.data.encodedToken? navigate("/") : alert("login failed")
+  if (response.data.encodedToken) 
+  { 
+    navigate("/")
+    setAuth(()=> ({
+      token: response.data.encodedToken,
+      isAuth: true
+    }))
+   }else { 
+     alert("login failed")
+   }
 
 } catch (error) {
-  console.error("error")
+  alert("error")
 }
 
 }

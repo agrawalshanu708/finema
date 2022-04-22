@@ -7,21 +7,7 @@ const storeReducer = (storeState, storeAction) => {
         ...storeState,
         storeItems: [...storeState.storeItems, ...storeAction.payload],
       };
-    case "SMALL_MODAL":
-      return {
-        ...storeState,
-        storeItems: storeState.storeItems.map((item) =>
-          item._id === storeAction.payload
-            ? {
-                ...item,
-                modal: !item.modal,
-              }
-            : item
-        ),
-      };
-
-    case "MODAL":
-      return { ...storeState, modal: !storeState.modal };
+   
 
     default:
       return storeState;
