@@ -29,7 +29,7 @@ setTimeout(() => {
 }
 
   return (
-    <div className="signup__page">
+
       <div className="signup__form">
         <div className="signup__form__text">Signup</div>
         <input
@@ -64,7 +64,7 @@ setTimeout(() => {
           </Link>
         </div>
       </div>
-    </div>
+
   );
 };
 

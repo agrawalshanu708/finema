@@ -36,7 +36,7 @@ try {
 }
   return (
     <>
-      <div>
+ 
         <div className="login__form">
           <div className="login__form__text">Login</div>
           <input
@@ -59,7 +59,7 @@ try {
             </Link>
           </div>
         </div>
-      </div>
+  
     </>
   );
 };

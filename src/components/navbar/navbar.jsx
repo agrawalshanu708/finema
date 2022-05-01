@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar__profile__box">
-        <p>Hi, {auth.isAuth? auth.userName: "User"}</p>
+        <p style = {{color: "#AB542F"}}>Hi, {auth.isAuth? auth.userName: "User"}</p>
         <div className="navbar__profile">
           <Link to="./login">
             <span onClick = {() => { 
