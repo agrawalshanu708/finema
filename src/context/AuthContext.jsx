@@ -3,7 +3,8 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 const [auth,setAuth] = useState({
     token : "",
-    isAUth: false
+    isAUth: false,
+    userName: ""
 })
   return <AuthContext.Provider value={{auth,setAuth}}>
       {children}

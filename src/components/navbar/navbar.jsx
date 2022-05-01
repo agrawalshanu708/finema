@@ -7,7 +7,7 @@ const Navbar = () => {
   const { likeState } = useLike();
   const { watchLaterState } = useWatchLater();
   const { historyState } = useHistory();
-  const{auth} = useAuth();
+  const{auth,setAuth} = useAuth();
   const{playlists} = usePlaylist()
   return (
     <>
@@ -51,11 +51,15 @@ const Navbar = () => {
             </span>
           </div>
         </div>
+        <div className="navbar__profile__box">
+        <p>Hi, {auth.isAuth? auth.userName: "User"}</p>
         <div className="navbar__profile">
           <Link to="./login">
-            {" "}
-            <span className="navbar__text">{auth.isAuth ?"Logout":"Login"}</span>
+            <span onClick = {() => { 
+              auth.token && setAuth(auth => ({...auth,token: ""}))
+            }} className="navbar__text">{auth.token ?"Logout":"Login"}</span>
           </Link>
+        </div>
         </div>
       </div>
     </>

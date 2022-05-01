@@ -12,6 +12,7 @@ import {
   useHistory,
   useStore,
   usePlaylist,
+  useAuth
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
 import {Modal} from "../Modal/Modal"
@@ -22,18 +23,24 @@ const VideoCard = ({ product }) => {
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { historyState, historyDispatch } = useHistory();
   const [showModal, setShowModal] = useState(false);
+  const{auth} = useAuth();
   const isHistoryItem = checkInArray(_id, historyState.historyItems);
   const historyHandler = (id, product) => {
+    if(auth.token){
     if (!isHistoryItem) {
       historyDispatch({
         type: "ADD_TO_HISTORY",
         payload: product,
       });
+    }}else{
+      alert("login")
     }
   };
 
   const isWatchItem = checkInArray(_id, watchLaterState.watchLaterItems);
   const watchlaterHandler = (id, product) => {
+  if(auth.token){
+
     if (isWatchItem) {
       watchLaterDispatch({
         type: "REMOVE_FROM_WATCH_LATER",
@@ -45,10 +52,14 @@ const VideoCard = ({ product }) => {
         payload: product,
       });
     }
+  }else{
+    alert("please login")
+  }
   };
 
   const isLikeItem = checkInArray(_id, likeState.likeItems);
   const likeHandler = (id, product) => {
+    if(auth.token){
     isLikeItem
       ? likeDispatch({
           type: "REMOVE_FROM_LIKE",
@@ -58,6 +69,9 @@ const VideoCard = ({ product }) => {
           type: "ADD_TO_LIKE",
           payload: product,
         });
+      }else{
+        alert("please login")
+      }
   };
 
   return (
@@ -87,7 +101,7 @@ const VideoCard = ({ product }) => {
             size="3rem"
             onClick={() => likeHandler(_id, product)}
           />
-        ) : (
+        ) : ( 
           <AiOutlineHeart
             color="#AB542F"
             size="3rem"
@@ -98,7 +112,14 @@ const VideoCard = ({ product }) => {
         <MdOutlinePlaylistPlay
           color="#AB542F"
           size="3rem"
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            if(auth.token){
+              setShowModal(true)
+            }else{
+           alert("please login")
+            }
+          }}
+           
         />
         <MdOutlineWatchLater
           color="#AB542F"

@@ -23,12 +23,12 @@ try {
     navigate("/")
     setAuth(()=> ({
       token: response.data.encodedToken,
-      isAuth: true
+      isAuth: true,
+      userName: response.data.foundUser.firstName
     }))
    }else { 
      alert("login failed")
    }
-
 } catch (error) {
   alert("error")
 }
