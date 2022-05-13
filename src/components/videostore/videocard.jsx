@@ -16,6 +16,7 @@ import {
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
 import {Modal} from "../Modal/Modal"
+import { toast } from "react-toastify";
 
 const VideoCard = ({ product }) => {
   const { _id, title, charactor, description, modal } = product;
@@ -33,7 +34,7 @@ const VideoCard = ({ product }) => {
         payload: product,
       });
     }}else{
-      alert("login")
+      toast.error("please Login First")
     }
   };
 
@@ -53,7 +54,8 @@ const VideoCard = ({ product }) => {
       });
     }
   }else{
-    alert("please login")
+    toast.error("please Login First")
+
   }
   };
 
@@ -70,7 +72,7 @@ const VideoCard = ({ product }) => {
           payload: product,
         });
       }else{
-        alert("please login")
+        toast.error("please Login First")
       }
   };
 
@@ -116,7 +118,8 @@ const VideoCard = ({ product }) => {
             if(auth.token){
               setShowModal(true)
             }else{
-           alert("please login")
+              toast.error("please Login First")
+
             }
           }}
            

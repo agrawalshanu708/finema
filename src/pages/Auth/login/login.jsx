@@ -4,6 +4,7 @@ import {useState} from "react"
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {useAuth} from "../../../context/index"
+import { toast } from "react-toastify";
 const Login = () => {
 const navigate = useNavigate()
 
@@ -26,11 +27,13 @@ try {
       isAuth: true,
       userName: response.data.foundUser.firstName
     }))
+    toast.success("Login Successfully")
+
    }else { 
-     alert("login failed")
-   }
+    toast.error("Invalid userId Password")
+  }
 } catch (error) {
-  alert("error")
+  toast.error("Login failed")
 }
 
 }

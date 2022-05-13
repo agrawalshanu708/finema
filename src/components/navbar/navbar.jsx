@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 import { useLike, useWatchLater, useHistory,useAuth,usePlaylist} from "./../../context/index";
 import { logo } from "./../../assets/index";
+import { toast } from "react-toastify";
 const Navbar = () => {
   const { likeState } = useLike();
   const { watchLaterState } = useWatchLater();
@@ -56,8 +57,10 @@ const Navbar = () => {
         <div className="navbar__profile">
           <Link to="./login">
             <span onClick = {() => { 
-              auth.token && setAuth(auth => ({...auth,token: ""}))
-            }} className="navbar__text">{auth.token ?"Logout":"Login"}</span>
+              if(auth.token){
+                setAuth(auth => ({...auth,token: "",userName: "User"}))
+                toast.success("Logout Successfully")
+            }}} className="navbar__text">{auth.token ?"Logout":"Login"}</span>
           </Link>
         </div>
         </div>

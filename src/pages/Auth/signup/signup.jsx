@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
 import "./signup.css";
+import { toast } from "react-toastify";
 const Signup = () => {
   const [firstName, setFirstName] = useState("shanu");
   const [lastName, setLastName] = useState("agrawal");
@@ -23,8 +24,9 @@ localStorage.setItem("token", response.data.encodedToken)
 setTimeout(() => {
   navigate("/login")
 }, 1000);
+toast.success("Signup Successfully")
 } catch (error) {
- alert("failed")
+ toast.error("Signup Failed")
 }
 }
 
