@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route} from "react-router-dom";
-import {Navbar,Searchbar} from "./components/index"
+import {Navbar,Searchbar,RequireAuth} from "./components/index"
 import {Home,LikePage,WatchLaterPage,HistoryPage,Playlist,Login,Signup,LandingPage} from "./pages/index"
 import { VideosInPlaylist } from "./pages/playlistpage/videosInPlaylist";
 import { ToastContainer} from 'react-toastify';
@@ -14,10 +14,26 @@ function App() {
     <Routes>
       <Route path="/videos" element = {<Home/>}/>
       <Route path = "/" element = {<LandingPage/>}/>
-      <Route path = "/like" element = {<LikePage/>}/>
-      <Route path = "/watchlater" element = {<WatchLaterPage/>}/>
-      <Route path = "/history" element = {<HistoryPage/>}/>
-      <Route path = "/playlist" element = {<Playlist/>}/>
+      <Route path = "/like" element = {
+      <RequireAuth>
+      <LikePage/>
+      </RequireAuth>
+      }/>
+      <Route path = "/watchlater" element = {
+      <RequireAuth>
+      <WatchLaterPage/>
+      </RequireAuth>
+      }/>
+      <Route path = "/history" element = {
+      <RequireAuth>
+      <HistoryPage/>
+      </RequireAuth>
+      }/>
+      <Route path = "/playlist" element = {
+      <RequireAuth>
+      <Playlist/>
+      </RequireAuth>
+      }/>
       <Route path = "/login" element = {<Login/>}/>
       <Route path = "/signup" element = {<Signup/>}/>
       <Route path="/playlist/:id" element={<VideosInPlaylist/>} />
