@@ -2,6 +2,7 @@ body {
   min-height: 100vh;
   background-color: var(--dark-black);
  color: var(--white-color);
+ margin: 2rem;
 }
 
 :root {
@@ -9,4 +10,17 @@ body {
  --light-black: #18181b;
  --white-color: #ffffff;
  --primary-color: #AB542F;
+}
+.btn{
+  color: var(--white-color);
+  background-color: var( --primary-color) ;
+  border: 0;
+  text-decoration: none; 
+  width: fit-content;
+  padding:0.8rem 1.5rem;
+}
+.btn:hover{
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
 }

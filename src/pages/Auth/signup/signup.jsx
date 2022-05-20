@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios"
 import "./signup.css";
+import { toast } from "react-toastify";
 const Signup = () => {
   const [firstName, setFirstName] = useState("shanu");
   const [lastName, setLastName] = useState("agrawal");
@@ -18,18 +19,19 @@ const body = {
   lastName: lastName,
 }
 try {
-  const response = await axios.post("/api/auth/signup", body)
+const response = await axios.post("/api/auth/signup", body)
 localStorage.setItem("token", response.data.encodedToken)
 setTimeout(() => {
   navigate("/login")
 }, 1000);
+toast.success("Signup Successfully")
 } catch (error) {
-  console.error(error)
+ toast.error("Signup Failed")
 }
 }
 
   return (
-    <div className="signup__page">
+
       <div className="signup__form">
         <div className="signup__form__text">Signup</div>
         <input
@@ -64,7 +66,7 @@ setTimeout(() => {
           </Link>
         </div>
       </div>
-    </div>
+
   );
 };
 

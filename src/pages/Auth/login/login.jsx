@@ -3,12 +3,14 @@ import "./login.css";
 import {useState} from "react"
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import {useAuth} from "../../../context/index"
+import { toast } from "react-toastify";
 const Login = () => {
 const navigate = useNavigate()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+ const{auth,setAuth} = useAuth();
 
   const loginHandler = async () => {
     const body = {
@@ -17,16 +19,27 @@ const navigate = useNavigate()
  }
 try {
   const response = await axios.post("/api/auth/login",body)
-  response.data.encodedToken? navigate("/") : alert("login failed")
+  if (response.data.encodedToken) 
+  { 
+    navigate("/")
+    setAuth(()=> ({
+      token: response.data.encodedToken,
+      isAuth: true,
+      userName: response.data.foundUser.firstName
+    }))
+    toast.success("Login Successfully")
 
+   }else { 
+    toast.error("Invalid userId Password")
+  }
 } catch (error) {
-  console.error("error")
+  toast.error("Login failed")
 }
 
 }
   return (
     <>
-      <div>
+ 
         <div className="login__form">
           <div className="login__form__text">Login</div>
           <input
@@ -49,7 +62,7 @@ try {
             </Link>
           </div>
         </div>
-      </div>
+  
     </>
   );
 };

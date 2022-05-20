@@ -63,3 +63,9 @@
   top: -8px;
   color: var(--white-color);
 }
+.navbar__profile__box{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+
+}

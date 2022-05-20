@@ -1,11 +1,14 @@
 import React from 'react'
-import {VideoStore} from "./../../components/index"
+import {VideoStore,Modal} from "./../../components/index"
+import {usePlaylist} from "../../context/index"
 const Home = () => {
-  return (
+const{openPlaylistModal} = usePlaylist()
 
+  return (
     <>
     <div className="homepage col-11">
-        <VideoStore/>
+     
+     <VideoStore/>
     </div>
     
     </>

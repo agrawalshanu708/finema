@@ -1,10 +1,11 @@
 import React from 'react'
 import {AiOutlineHeart,AiOutlineClose} from "react-icons/ai"
 import {MdOutlinePlaylistPlay,MdOutlineWatchLater} from "react-icons/md"
-import {useHistory} from "./../../context/index"
+import {useHistory,usePlaylist} from "./../../context/index"
 const HistoryCard = ({product,index}) => {
     const{historyDispatch} = useHistory()
     const{_id,title,description,charactor} = product
+    const{ openPlaylistModal,setOpenPlaylistModal} = usePlaylist();
 
   return (
 <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
@@ -25,7 +26,8 @@ const HistoryCard = ({product,index}) => {
       changes today</div>
     <div class="card-footer-box card__icons">
       <AiOutlineHeart  color="#AB542F" size="4rem"/>
-      <MdOutlinePlaylistPlay color="#AB542F" size="4rem"/>
+      <MdOutlinePlaylistPlay color="#AB542F" size="3rem" onClick={() => setOpenPlaylistModal(!openPlaylistModal)} />
+
       <MdOutlineWatchLater color="#AB542F" size="3rem"/>
       </div>
       </div>

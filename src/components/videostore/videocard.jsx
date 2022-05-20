@@ -1,6 +1,6 @@
-import { useState } from "react";
-import {Link} from "react-router-dom";
-import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
+import { useState ,Fragment} from "react";
+import { Link } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import {
   MdOutlinePlaylistPlay,
   MdOutlineWatchLater,
@@ -11,27 +11,37 @@ import {
   useWatchLater,
   useHistory,
   useStore,
+  usePlaylist,
+  useAuth
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
-const VideoCard = ({ product}) => {
-  const { _id, title,charactor, description, modal } = product;
+import {Modal} from "../Modal/Modal"
+import { toast } from "react-toastify";
+
+const VideoCard = ({ product }) => {
+  const { _id, title, charactor, description, modal } = product;
   const { likeState, likeDispatch } = useLike();
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
   const { historyState, historyDispatch } = useHistory();
-  const { storeState,storeDispatch } = useStore();
-
+  const [showModal, setShowModal] = useState(false);
+  const{auth} = useAuth();
   const isHistoryItem = checkInArray(_id, historyState.historyItems);
   const historyHandler = (id, product) => {
+    if(auth.token){
     if (!isHistoryItem) {
       historyDispatch({
         type: "ADD_TO_HISTORY",
         payload: product,
       });
+    }}else{
+      toast.error("please Login First")
     }
   };
 
   const isWatchItem = checkInArray(_id, watchLaterState.watchLaterItems);
   const watchlaterHandler = (id, product) => {
+  if(auth.token){
+
     if (isWatchItem) {
       watchLaterDispatch({
         type: "REMOVE_FROM_WATCH_LATER",
@@ -43,10 +53,15 @@ const VideoCard = ({ product}) => {
         payload: product,
       });
     }
+  }else{
+    toast.error("please Login First")
+
+  }
   };
 
   const isLikeItem = checkInArray(_id, likeState.likeItems);
   const likeHandler = (id, product) => {
+    if(auth.token){
     isLikeItem
       ? likeDispatch({
           type: "REMOVE_FROM_LIKE",
@@ -56,13 +71,19 @@ const VideoCard = ({ product}) => {
           type: "ADD_TO_LIKE",
           payload: product,
         });
+      }else{
+        toast.error("please Login First")
+      }
   };
 
-
-
-
   return (
-    <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {_id}>
+    <Fragment>
+      {showModal && <Modal setShowModal={setShowModal} video={product}/>}
+    <div
+      class="border-skin text-overlay-card-dimension card-relative video-card"
+      key={_id}
+    >
+      
       <div
         class="text-overlay-card-img-box"
         onClick={() => historyHandler(_id, product)}
@@ -76,21 +97,33 @@ const VideoCard = ({ product}) => {
         today
       </div>
       <div class="card-footer-box card__icons">
-   { isLikeItem ? <AiFillHeart
-          color="#AB542F"
-          size="3rem"
-          onClick={() => likeHandler(_id, product)}
-        /> :   <AiOutlineHeart
-          color="#AB542F"
-          size="3rem"
-          onClick={() => likeHandler(_id, product)}
-        />}
+        {isLikeItem ? (
+          <AiFillHeart
+            color="#AB542F"
+            size="3rem"
+            onClick={() => likeHandler(_id, product)}
+          />
+        ) : ( 
+          <AiOutlineHeart
+            color="#AB542F"
+            size="3rem"
+            onClick={() => likeHandler(_id, product)}
+          />
+        )}
 
-        
-        <MdOutlinePlaylistPlay color="#AB542F" size="3rem" onClick={() => storeDispatch({
-          type : "SMALL_MODAL",
-          payload: _id
-        })} />
+        <MdOutlinePlaylistPlay
+          color="#AB542F"
+          size="3rem"
+          onClick={() => {
+            if(auth.token){
+              setShowModal(true)
+            }else{
+              toast.error("please Login First")
+
+            }
+          }}
+           
+        />
         <MdOutlineWatchLater
           color="#AB542F"
           size="3rem"
@@ -99,20 +132,8 @@ const VideoCard = ({ product}) => {
           }}
         />
       </div>
-
- {modal && <div className="card__modal">
-   <span>Talks</span>
-   <span>Business</span>
-   <span>watchlater</span>
-  
-<span onClick = {() => storeDispatch({
-     type: "MODAL"
-   })}>Create playlist +</span> 
-</div>} 
-
-
     </div>
-  );
+    </Fragment> );
 };
 
 export { VideoCard };
