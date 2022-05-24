@@ -10,14 +10,14 @@ export const videos = [
   charactor: "sunadar pichai",
   description: "",
   modal: false,
-  link: "https://www.youtube.com/watch?v=-yLlMk41sro"
+  iframeId: "-yLlMk41sro"
 },{
   _id: "Lb4IcGF5iTQ",
   title: "talks",
   charactor: "Mark Zuckerberg",
   description: "",
   modal: false,
-  link: "https://www.youtube.com/watch?v=Lb4IcGF5iTQ"
+  iframeId: "Lb4IcGF5iTQ"
 }
   ,{
     
@@ -27,7 +27,7 @@ export const videos = [
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link:"https://youtu.be/IgKWPdJWuBQ"
+    iframeId: "IgKWPdJWuBQ"
   },
   {
     _id: "bXGhtjezJPY",
@@ -35,7 +35,8 @@ export const videos = [
     charactor: "Jack Ma",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/bXGhtjezJPY"
+    iframeId: "bXGhtjezJPY"
+
   },
   {
     _id: "_Hk7nl8LbQA",
@@ -43,7 +44,7 @@ export const videos = [
     charactor: "Ratan Tata",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://www.youtube.com/watch?v=PJ2wjBt3Xeg"
+    iframeId: "PJ2wjBt3Xeg",
   },
 
   //finance
@@ -53,7 +54,7 @@ export const videos = [
     charactor: "Ranveer Ahulwalia",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/BKTN4C0m6MY"
+    iframeId: "BKTN4C0m6MY",
   },
   {
     _id: "LLdKcFpHgM8",
@@ -61,7 +62,7 @@ export const videos = [
     charactor: "CA Rachna",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/LLdKcFpHgM8"
+    iframeId: "LLdKcFpHgM8",
   },
   {
     _id: "LknADkbbekc",
@@ -69,7 +70,7 @@ export const videos = [
     charactor: "Sandeep Maheswari",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/LknADkbbekc"
+    iframeId: "LknADkbbekc",
   },
   {
     _id: "pWU3DYvnP0s",
@@ -77,7 +78,7 @@ export const videos = [
     charactor: "Anil Lamba",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/pWU3DYvnP0s"
+    iframeId: "pWU3DYvnP0s",
   },
   {
     _id: "E8xFo5lZGDA",
@@ -85,7 +86,7 @@ export const videos = [
     charactor: "Dhaval Bathia",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/E8xFo5lZGDA"
+    iframeId: "E8xFo5lZGDA",
   },
 
   //crypto
@@ -96,7 +97,7 @@ export const videos = [
     charactor: "World's Largest Conference",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/quYJtGRCsew"
+    iframeId: "quYJtGRCsew",
   },
   {
     _id: "a5xNyAxwuPQ",
@@ -104,7 +105,7 @@ export const videos = [
     charactor: "Conference",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/a5xNyAxwuPQ"
+    iframeId: "a5xNyAxwuPQ",
   },
   {
     _id: "iFAc91miTMY",
@@ -112,7 +113,7 @@ export const videos = [
     charactor: "Himeesh Madaan",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/iFAc91miTMY"
+    iframeId: "iFAc91miTMY",
   },
   {
     _id: "WwWMJ1pXDZM",
@@ -120,7 +121,7 @@ export const videos = [
     charactor: "crypto notes",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/WwWMJ1pXDZM"
+    iframeId: "WwWMJ1pXDZM",
   },
   {
     _id: "OA2Emtj5Mjw",
@@ -128,7 +129,7 @@ export const videos = [
     charactor: "Nitish Rajput",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/OA2Emtj5Mjw"
+    iframeId: "OA2Emtj5Mjw",
   },
 
   //Stockmarket
@@ -138,7 +139,7 @@ export const videos = [
     charactor: "Warren Buffet",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/DlA2jMueIyc"
+    iframeId: "DlA2jMueIyc",
   },
   {
     _id: "dbt-RB18az0",
@@ -146,7 +147,7 @@ export const videos = [
     charactor: "Warren Buffet",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/dbt-RB18az0"
+    iframeId: "dbt-RB18az0",
   },
   
   {
@@ -155,7 +156,7 @@ export const videos = [
     charactor: "Raamdeo Agrawal",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/DlA2jMueIyc"
+    iframeId: "DlA2jMueIyc",
   },
     
   {
@@ -164,7 +165,7 @@ export const videos = [
     charactor: "Netflix",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/ZCFkWDdmXG8"
+    iframeId: "ZCFkWDdmXG8",
   },
   {
     _id: "FyB5inp5r6M",
@@ -172,7 +173,7 @@ export const videos = [
     charactor: "Ankur Warikoo",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://youtu.be/FyB5inp5r6M"
+    iframeId: "FyB5inp5r6M",
   },
   {
     _id: "8CIwSvPHX7g",
@@ -180,7 +181,7 @@ export const videos = [
     charactor: "Harshad Mehta",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
     modal: false,
-    link: "https://www.youtube.com/watch?v=j1rRdu1AoSQ"
+    iframeId: "j1rRdu1AoSQ",
   },
 
 ];

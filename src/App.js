@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route} from "react-router-dom";
 import {Navbar,Searchbar,RequireAuth} from "./components/index"
-import {Home,LikePage,WatchLaterPage,HistoryPage,Playlist,Login,Signup,LandingPage, Error404} from "./pages/index"
+import {Home,LikePage,WatchLaterPage,HistoryPage,Playlist,Login,Signup,LandingPage, Error404, SingleVideo} from "./pages/index"
 import { VideosInPlaylist } from "./pages/playlistpage/videosInPlaylist";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,6 +15,7 @@ function App() {
       <Route path = "*" element = {<Error404/>}/>
       <Route path="/videos" element = {<Home/>}/>
       <Route path = "/" element = {<LandingPage/>}/>
+      <Route path = "/video/:videoId" element = {<SingleVideo/>}/>
       <Route path = "/like" element = {
       <RequireAuth>
       <LikePage/>

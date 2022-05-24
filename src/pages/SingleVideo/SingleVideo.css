@@ -1,0 +1,13 @@
+.video{
+    width: 95vw;
+    height: 60rem;
+    border:none;
+    margin:0;
+}
+.video-details{
+    margin-top: 1rem;
+}
+.icons-box{
+    margin-top: 2rem;
+    
+}

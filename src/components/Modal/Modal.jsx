@@ -86,7 +86,7 @@ const Modal = ({setShowModal,video}) => {
             <button className="button primary_btn" type="submit" onClick = {() => setShowModal(false)}>
               Create Collection
             </button>
-            <button className="button secondary_btn">Cancel</button>
+            {/* <button className="button secondary_btn">Cancel</button> */}
           </div>
         </div>
       </div>
