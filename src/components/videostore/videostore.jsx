@@ -15,7 +15,7 @@ const VideoStore = () => {
   return (
     <>
       <p>Showing Result <span className="total_product_text">{finalItems.length}</span> </p>
-      <div className="videostore_container col-12">
+      <div className="flex-wrap flex-center ">
         {finalItems.map((product) => (
           <VideoCard product={product} /> 
         ))}

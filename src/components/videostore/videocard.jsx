@@ -1,5 +1,5 @@
 import { useState ,Fragment} from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import {
   MdOutlinePlaylistPlay,
@@ -10,8 +10,6 @@ import {
   useLike,
   useWatchLater,
   useHistory,
-  useStore,
-  usePlaylist,
   useAuth
 } from "./../../context/index";
 import { checkInArray } from "./../../utils/index";
@@ -25,6 +23,7 @@ const VideoCard = ({ product }) => {
   const { historyState, historyDispatch } = useHistory();
   const [showModal, setShowModal] = useState(false);
   const{auth} = useAuth();
+  const navigate = useNavigate();
   const isHistoryItem = checkInArray(_id, historyState.historyItems);
   const historyHandler = (id, product) => {
     if(auth.token){
@@ -86,12 +85,15 @@ const VideoCard = ({ product }) => {
       
       <div
         class="text-overlay-card-img-box"
-        onClick={() => historyHandler(_id, product)}
+        onClick={() => {
+          historyHandler(_id, product)
+         navigate(`/video/${_id}`)
+        }}
       >
         <img src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`} />
       </div>
       {/* <div class="card-head head-overflow">{title}</div> */}
-      <div class="card-tag tag-overflow ">{charactor}</div>
+      <div class="card-character">{charactor}</div>
       <div class="card-desc skin">
         Visit ten places on our planet that are undergoing the biggest changes
         today
@@ -124,13 +126,19 @@ const VideoCard = ({ product }) => {
           }}
            
         />
-        <MdOutlineWatchLater
+        {isWatchItem? <MdWatchLater
           color="#AB542F"
           size="3rem"
           onClick={() => {
             watchlaterHandler(_id, product);
           }}
-        />
+        /> : <MdOutlineWatchLater
+          color="#AB542F"
+          size="3rem"
+          onClick={() => {
+            watchlaterHandler(_id, product);
+          }}
+        />}
       </div>
     </div>
     </Fragment> );
