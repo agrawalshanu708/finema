@@ -4,10 +4,9 @@ Finema - A platform for finance Knowledge, video Library
 
 - [Finema](https://finema.vercel.app/)
 
-<img width="933" alt="image" src="https://user-images.githubusercontent.com/95335996/172688074-b4b00afd-8792-473c-b5a6-ba0ee1683453.png">
+<img width="942" alt="image" src="https://user-images.githubusercontent.com/95335996/173034014-a91673d2-8969-4a6c-a116-62d50c6aca9b.png">
 
-## Pages till now
-
+## Pages Till Now
 - Landing/Home page
 - video player page
 - Videos page
@@ -81,10 +80,9 @@ Finema - A platform for finance Knowledge, video Library
 ### Images
 
 <div style = {{display: "flex"}}>
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/95335996/172688615-fa78138d-1599-48fe-89c1-910e6e93d03e.png"> 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/95335996/172688849-191d5580-0eed-4d62-80b6-35975aaaa723.png"> 
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/95335996/172689056-9fd3be79-efc4-44a9-ba61-fd0411a3560e.png">  
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/95335996/172689209-f4760a96-4076-4847-a827-08d12d011157.png">
+<img width="937" alt="image" src="https://user-images.githubusercontent.com/95335996/173034107-326df0bf-247d-4e23-b09d-93972e57a205.png">
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/95335996/173034443-9973cbf5-d3b9-4af3-b4f9-b8a14b96be6a.png">
+<img width="896" alt="image" src="https://user-images.githubusercontent.com/95335996/173034784-ed6dab1e-9629-4cc8-8fde-2c942696f00e.png">
  </div>
 ## Author
 
