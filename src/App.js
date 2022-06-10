@@ -1,15 +1,21 @@
 import "./App.css";
-import { Routes, Route} from "react-router-dom";
-import {Navbar,Searchbar,RequireAuth} from "./components/index"
+import { Routes, Route, useLocation} from "react-router-dom";
+import {Navbar,Searchbar,RequireAuth,PlainNav} from "./components/index"
 import {Home,LikePage,WatchLaterPage,HistoryPage,Playlist,Login,Signup,LandingPage, Error404, SingleVideo} from "./pages/index"
 import { VideosInPlaylist } from "./pages/playlistpage/videosInPlaylist";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <div className="App">
-      <Navbar/>
+    {pathname === "/login" || pathname === "/signup" ? (
+        <PlainNav />
+      ): (
+        <Navbar />
+      )}
       <Searchbar/>
     <Routes>
       <Route path = "*" element = {<Error404/>}/>
